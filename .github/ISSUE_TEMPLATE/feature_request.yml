@@ -1,0 +1,48 @@
+name: Feature request
+description: Suggest an improvement to the catalog authoring workflow
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        zodcat is intentionally small and scoped to json-render catalog authoring. Explain the workflow problem before proposing an implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the workflow friction, not only the desired feature.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Area
+      options:
+        - Catalog editing
+        - Generated code
+        - Validation
+        - Templates or component library
+        - Localization
+        - Accessibility
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues before opening this one.
+          required: true

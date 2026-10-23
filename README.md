@@ -1,7 +1,10 @@
 # zodcat
 
 [![CI](https://github.com/Jianwen-Xu/zodcat/actions/workflows/ci.yml/badge.svg)](https://github.com/Jianwen-Xu/zodcat/actions/workflows/ci.yml)
+[![Deploy](https://github.com/Jianwen-Xu/zodcat/actions/workflows/pages.yml/badge.svg)](https://github.com/Jianwen-Xu/zodcat/actions/workflows/pages.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-d94a20.svg)](LICENSE)
+
+[Open the live demo](https://jianwen-xu.github.io/zodcat/)
 
 **A visual catalog definer for [json-render](https://json-render.dev).** Configure components, shape their Zod schemas, and copy a production-ready `defineCatalog` file. No backend, no account, no hand-written boilerplate.
 

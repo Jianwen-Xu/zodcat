@@ -146,11 +146,40 @@ The catalog state lives in a small JSON model: component metadata plus a list of
 
 ## Scope and roadmap
 
-This is an MVP for the catalog authoring friction point, not a registry generator.
+zodcat is a focused authoring tool, not a full application generator. It owns the contract between an AI-generated UI and a real renderer.
 
-- Included: components, props, constraints, optional/nullable modifiers, default slots, descriptions, live code, templates, local autosave, guardrails.
-- Next: named slots, custom action declarations, array/object props, import an existing catalog, and an optional AI preview that turns a natural-language prompt into a spec and renders it.
-- The preview experiment is intentionally separate. It must validate against the same catalog, otherwise it proves nothing.
+### Included today
+
+- Visual component and prop editing.
+- Typed constraints, enums, optional and nullable modifiers.
+- Default slots, descriptions, live code, templates, autosave, and guardrails.
+- English and Chinese UI.
+
+### Next: schema coverage
+
+- Action declarations and component event bindings.
+- Named slots.
+- Array and object props.
+- Import an existing `catalog.ts`.
+
+### Next: Registry scaffold
+
+Generate a typed `registry.tsx` next to `catalog.ts`:
+
+- A `defineRegistry(catalog, { components })` map for the current component set.
+- Minimal, accessible implementations for the built-in library.
+- Typed placeholders for custom components, with explicit TODOs.
+- Separate copy and download for `registry.tsx`.
+- Optional `@json-render/shadcn` preset later.
+
+This closes the gap between [Quick Start step 1](https://json-render.dev/docs/quick-start) and [step 2](https://json-render.dev/docs/quick-start#2-define-your-components). It also provides the renderer needed for previewing a catalog.
+
+Registry scaffolding should generate a safe, replaceable skeleton. It should not pretend to replace a user's design system or generate business components.
+
+### Later: AI preview
+
+- Natural language prompt to spec, then validate and render with the generated registry.
+- The preview must validate against the same catalog and registry; otherwise it proves nothing.
 
 ## Compatibility
 
